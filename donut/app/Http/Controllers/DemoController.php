@@ -7,6 +7,7 @@ use Auth;
 use App\User;
 use App\Chat;
 use App\Messages;
+use App\Participans;
 
 class DemoController extends Controller
 {
@@ -52,7 +53,25 @@ foreach ($c->msg as $m) {
     return view('chat')->with('chat', $chat);
   }
 
-  public function createChat()
+  public function createChat($user_id)
   {
+    $user = User::find($user_id);
+
+    $chat = Chat::create([
+      'name' => "new chat",
+    ]);
+
+    Participans::create([
+      'user_id' => $user_id,
+      'chat_id' => $chat->id,
+    ]);
+
+    Participans::create([
+      'user_id' => Auth::user()->id,
+      'chat_id' => $chat->id,
+    ]);
+
+    return redirect('/chat/'.$chat->id);
+
   }
 }

@@ -19,7 +19,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
-Route::get('/create_chat', 'DemoController@createChat');
+Route::get('/create_chat/{user_id}', 'DemoController@createChat');
 Route::get('/chat/{chat}', 'DemoController@chat');
 Route::get('/getmessage/{chat}', 'DemoController@getmessage');
 Route::get('/sentmessage/{chat}', 'DemoController@sentmessage');
