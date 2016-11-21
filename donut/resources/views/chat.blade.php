@@ -1,5 +1,7 @@
 <html>
 <head>
+	<script src="https://cdn.jsdelivr.net/emojione/2.2.6/lib/js/emojione.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/emojione/2.2.6/assets/css/emojione.min.css"/>
 	<title>Messenger</title>
 	<style type="text/css">
 	html {
@@ -155,13 +157,17 @@ function update() {
 	var output = "";
 		xmlhttp.onreadystatechange=function() {
 			if (xmlhttp.readyState==4 && xmlhttp.status==200) {
-				document.getElementById("msg-area").innerHTML =	 this.responseText;
+				emojione.ascii = true;
+				var output = emojione.shortnameToImage(this.responseText);
+				document.getElementById("msg-area").innerHTML =	output;
 
 				msgarea.scrollTop = msgarea.scrollHeight;
 			}
 		}
 	      xmlhttp.open("GET","/getmessage/{{$chat->id}}" ,true);
 	      xmlhttp.send();
+
+
 }
 
 function sendmsg() {

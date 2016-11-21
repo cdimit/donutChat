@@ -16,4 +16,9 @@ protected $table= "chat";
   {
     return $this->hasMany('App\Messages');
   }
+
+  public function part()
+  {
+    return $this->hasMany('App\Participans');
+  }
 }

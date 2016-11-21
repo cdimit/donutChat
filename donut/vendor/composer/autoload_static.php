@@ -31,6 +31,10 @@ class ComposerStaticInit49686997d79ac68039ec6e5c95f769e1
         array (
             'Webmozart\\Assert\\' => 17,
         ),
+        'U' => 
+        array (
+            'Unicodeveloper\\Emoji\\' => 21,
+        ),
         'S' => 
         array (
             'Symfony\\Polyfill\\Util\\' => 22,
@@ -77,6 +81,10 @@ class ComposerStaticInit49686997d79ac68039ec6e5c95f769e1
         array (
             'Faker\\' => 6,
         ),
+        'E' => 
+        array (
+            'Emojione\\' => 9,
+        ),
         'D' => 
         array (
             'Dotenv\\' => 7,
@@ -108,6 +116,10 @@ class ComposerStaticInit49686997d79ac68039ec6e5c95f769e1
         'Webmozart\\Assert\\' => 
         array (
             0 => __DIR__ . '/..' . '/webmozart/assert/src',
+        ),
+        'Unicodeveloper\\Emoji\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/unicodeveloper/laravel-emoji/src',
         ),
         'Symfony\\Polyfill\\Util\\' => 
         array (
@@ -209,6 +221,10 @@ class ComposerStaticInit49686997d79ac68039ec6e5c95f769e1
         array (
             0 => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker',
         ),
+        'Emojione\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/emojione/emojione/lib/php/src',
+        ),
         'Dotenv\\' => 
         array (
             0 => __DIR__ . '/..' . '/vlucas/phpdotenv/src',
@@ -290,6 +306,7 @@ class ComposerStaticInit49686997d79ac68039ec6e5c95f769e1
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
+        'App\\Http\\Middleware\\LogLastUserActivity' => __DIR__ . '/../..' . '/app/Http/Middleware/LogLastUserActivity.php',
         'App\\Http\\Middleware\\RedirectIfAuthenticated' => __DIR__ . '/../..' . '/app/Http/Middleware/RedirectIfAuthenticated.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
         'App\\Messages' => __DIR__ . '/../..' . '/app/Messages.php',
@@ -365,6 +382,11 @@ class ComposerStaticInit49686997d79ac68039ec6e5c95f769e1
         'Dotenv\\Exception\\ValidationException' => __DIR__ . '/..' . '/vlucas/phpdotenv/src/Exception/ValidationException.php',
         'Dotenv\\Loader' => __DIR__ . '/..' . '/vlucas/phpdotenv/src/Loader.php',
         'Dotenv\\Validator' => __DIR__ . '/..' . '/vlucas/phpdotenv/src/Validator.php',
+        'Emojione\\Client' => __DIR__ . '/..' . '/emojione/emojione/lib/php/src/Client.php',
+        'Emojione\\ClientInterface' => __DIR__ . '/..' . '/emojione/emojione/lib/php/src/ClientInterface.php',
+        'Emojione\\Emojione' => __DIR__ . '/..' . '/emojione/emojione/lib/php/src/Emojione.php',
+        'Emojione\\Ruleset' => __DIR__ . '/..' . '/emojione/emojione/lib/php/src/Ruleset.php',
+        'Emojione\\RulesetInterface' => __DIR__ . '/..' . '/emojione/emojione/lib/php/src/RulesetInterface.php',
         'Faker\\Calculator\\Iban' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Calculator/Iban.php',
         'Faker\\Calculator\\Luhn' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Calculator/Luhn.php',
         'Faker\\DefaultGenerator' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/DefaultGenerator.php',
@@ -1361,6 +1383,7 @@ class ComposerStaticInit49686997d79ac68039ec6e5c95f769e1
         'Illuminate\\Session\\EncryptedStore' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Session/EncryptedStore.php',
         'Illuminate\\Session\\ExistenceAwareInterface' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Session/ExistenceAwareInterface.php',
         'Illuminate\\Session\\FileSessionHandler' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Session/FileSessionHandler.php',
+        'Illuminate\\Session\\Middleware\\AuthenticateSession' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Session/Middleware/AuthenticateSession.php',
         'Illuminate\\Session\\Middleware\\StartSession' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php',
         'Illuminate\\Session\\SessionInterface' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Session/SessionInterface.php',
         'Illuminate\\Session\\SessionManager' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Session/SessionManager.php',
@@ -1997,6 +2020,7 @@ class ComposerStaticInit49686997d79ac68039ec6e5c95f769e1
         'PHP_Token_STRING' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_STRING_CAST' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_STRING_VARNAME' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
+        'PHP_Token_SUPER' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_SWITCH' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_Stream' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token/Stream.php',
         'PHP_Token_Stream_CachingFactory' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token/Stream/CachingFactory.php',
@@ -2011,6 +2035,7 @@ class ComposerStaticInit49686997d79ac68039ec6e5c95f769e1
         'PHP_Token_UNSET' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_UNSET_CAST' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_USE' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
+        'PHP_Token_USE_FUNCTION' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_VAR' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_VARIABLE' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_WHERE' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
@@ -3083,6 +3108,13 @@ class ComposerStaticInit49686997d79ac68039ec6e5c95f769e1
         'Symfony\\Polyfill\\Util\\TestListener' => __DIR__ . '/..' . '/symfony/polyfill-util/TestListener.php',
         'TestCase' => __DIR__ . '/../..' . '/tests/TestCase.php',
         'Text_Template' => __DIR__ . '/..' . '/phpunit/php-text-template/src/Template.php',
+        'Unicodeveloper\\Emoji\\Emoji' => __DIR__ . '/..' . '/unicodeveloper/laravel-emoji/src/Emoji.php',
+        'Unicodeveloper\\Emoji\\EmojiServiceProvider' => __DIR__ . '/..' . '/unicodeveloper/laravel-emoji/src/EmojiServiceProvider.php',
+        'Unicodeveloper\\Emoji\\Exceptions\\IsNull' => __DIR__ . '/..' . '/unicodeveloper/laravel-emoji/src/Exceptions/IsNull.php',
+        'Unicodeveloper\\Emoji\\Exceptions\\UnknownEmoji' => __DIR__ . '/..' . '/unicodeveloper/laravel-emoji/src/Exceptions/UnknownEmoji.php',
+        'Unicodeveloper\\Emoji\\Exceptions\\UnknownMethod' => __DIR__ . '/..' . '/unicodeveloper/laravel-emoji/src/Exceptions/UnknownMethod.php',
+        'Unicodeveloper\\Emoji\\Exceptions\\UnknownUnicode' => __DIR__ . '/..' . '/unicodeveloper/laravel-emoji/src/Exceptions/UnknownUnicode.php',
+        'Unicodeveloper\\Emoji\\Facades\\Emoji' => __DIR__ . '/..' . '/unicodeveloper/laravel-emoji/src/Facades/Emoji.php',
         'Webmozart\\Assert\\Assert' => __DIR__ . '/..' . '/webmozart/assert/src/Assert.php',
         'XdgBaseDir\\Xdg' => __DIR__ . '/..' . '/dnoegel/php-xdg-base-dir/src/Xdg.php',
         'phpDocumentor\\Reflection\\DocBlock' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlock.php',

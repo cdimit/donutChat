@@ -24,10 +24,12 @@
                   <br>
                   <h1><u>Our Reuse</u></h1>
                     Laravel Framework<br>
+                    Bootstrap<br>
                     https://github.com/howCodeORG/Messenger<br>
                     http://www.youtube.com/howCode<br>
                     A simple PHP API extension for DateTime. <a href="http://carbon.nesbot.com/">Carbon</a><br>
                     <a href="https://erikbelusic.com/tracking-if-a-user-is-online-in-laravel/">Tracking If a User Is Currently Online (Tutorial)</a><br>
+                    <a href="http://emojione.com/">EmojiOne</a><br>
                 </div>
             </div>
         </div>

@@ -58,6 +58,18 @@ foreach ($c->msg as $m) {
   {
     $user = User::find($user_id);
     $time = Carbon::now();
+    $auth = Auth::user();
+    $part1 = $user->part();
+    $part2 = $auth->part();
+
+    foreach($part1 as $p1){
+      foreach($part2 as $p2){
+          if($p1->chat->id == $p2->chat->id){
+            return redirect('/chat/'.$p1->chat->id);
+          }
+      }
+    }
+
     $chat = Chat::create([
       'name' => $time,
     ]);
@@ -68,7 +80,7 @@ foreach ($c->msg as $m) {
     ]);
 
     Participans::create([
-      'user_id' => Auth::user()->id,
+      'user_id' => $auth->id,
       'chat_id' => $chat->id,
     ]);
 
