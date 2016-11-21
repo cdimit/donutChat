@@ -8,6 +8,7 @@ use App\User;
 use App\Chat;
 use App\Messages;
 use App\Participans;
+use Carbon\Carbon;
 
 class DemoController extends Controller
 {
@@ -56,9 +57,9 @@ foreach ($c->msg as $m) {
   public function createChat($user_id)
   {
     $user = User::find($user_id);
-
+    $time = Carbon::now();
     $chat = Chat::create([
-      'name' => "new chat",
+      'name' => $time,
     ]);
 
     Participans::create([
