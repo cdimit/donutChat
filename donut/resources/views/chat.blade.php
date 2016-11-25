@@ -39,6 +39,9 @@
 		font-size: 14px;
 		width: calc(100% - 20px);
 		outline: none;
+		border-radius: 10px;
+		border: 5px solid #fff;
+		
 	}
 	.bottom {
 		width: 100%;
@@ -97,11 +100,13 @@
 		color: #000;
 		padding: 10px;
 		font-size: 14px;
+		border-radius: 15px;
 	}
 	.msgfrom {
-		background-color: #0084ff;
+		background-color: #1DABB8;
 		color: #FFF;
 		margin: 10px 10px 10px 55%;
+		border-radius: 15px;
 	}
 	.msgarr {
 		width: 0;
@@ -111,11 +116,13 @@
 		border-bottom: 8px solid #f1f0f0;
 		transform: rotate(315deg);
 		margin: -12px 0px 0px 45px;
+		border-radius: 25px;
 	}
 	.msgarrfrom {
-		border-bottom: 8px solid #0084ff;
+		border-bottom: 8px solid #1DABB8;
 		float: right;
 		margin-right: 45px;
+		border-radius: 25px;
 	}
 	.msgsentby {
 		color: #8C8C8C;
