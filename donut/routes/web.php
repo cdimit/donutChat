@@ -21,5 +21,6 @@ Auth::routes();
 Route::get('/home', 'HomeController@index');
 Route::get('/create_chat/{user_id}', 'DemoController@createChat');
 Route::get('/chat/{chat}', 'DemoController@chat');
+Route::get('/create_group', 'DemoController@createGroup');
 Route::get('/getmessage/{chat}', 'DemoController@getmessage');
 Route::get('/sentmessage/{chat}', 'DemoController@sentmessage');

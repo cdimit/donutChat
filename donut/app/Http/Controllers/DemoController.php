@@ -54,7 +54,36 @@ foreach ($c->msg as $m) {
     return view('chat')->with('chat', $chat);
   }
 
+  public function createGroup()
+  {
+    $users = $_GET["users"];
+    $user = explode("_",$users);
+    $auth = Auth::user();
+    $time = Carbon::now();
 
+    $chat = Chat::create([
+      'name' => $time,
+    ]);
+
+    Participans::create([
+      'user_id' => $auth->id,
+      'chat_id' => $chat->id,
+    ]);
+
+    foreach($user as $u){
+      if ($u==''){
+        }else{
+          Participans::create([
+            'user_id' => $u,
+            'chat_id' => $chat->id,
+          ]);
+      }
+    }
+
+    return redirect('/chat/'.$chat->id);
+
+
+  }
 
   public function createChat($user_id)
   {
@@ -63,7 +92,6 @@ foreach ($c->msg as $m) {
     $auth = Auth::user();
     $part1 = $user->part()->get();
     $part2 = $auth->part()->get();
-
     if($user==$auth){
       foreach($part1 as $p){
         if($p->chat->part->count()==1){

@@ -13,6 +13,8 @@
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
 
+    <script src="https://use.fontawesome.com/38043d99c5.js"></script>
+
     <!-- Scripts -->
     <script>
         window.Laravel = <?php echo json_encode([

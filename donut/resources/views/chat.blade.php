@@ -2,7 +2,10 @@
 <head>
 	<script src="https://cdn.jsdelivr.net/emojione/2.2.6/lib/js/emojione.min.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/emojione/2.2.6/assets/css/emojione.min.css"/>
+
+
 	<title>Messenger</title>
+
 	<style type="text/css">
 	html {
 		height: 100%;
@@ -41,7 +44,7 @@
 		outline: none;
 		border-radius: 10px;
 		border: 5px solid #fff;
-		
+
 	}
 	.bottom {
 		width: 100%;
@@ -93,6 +96,10 @@
 		margin: 0px auto;
 	}
 
+	.form-control {
+	  padding-right: 27px;
+	}
+
 	.msg {
 		margin: 10px 10px;
 		background-color: #f1f0f0;
@@ -139,10 +146,16 @@
 <div id="whitebg"></div>
 
 <div class="msg-container">
-	<div class="header">{{$chat->name}}</div>
-	<p id="demo"></p>
+	<div class="header">
+		         @foreach($chat->part as $p)
+	            @if($p->user->id!=Auth::user()->id)
+	              ({{$p->user->name}})
+	            @endif
+	          @endforeach</div>
+
 		<div class="msg-area" id="msg-area"></div>
-	<div class="bottom"><input type="text" name="msginput" class="msginput" id="msginput" onkeydown="if (event.keyCode == 13) sendmsg()" value="" placeholder="Enter your message here ... (Press enter to send message)"></div>
+	<div class="bottom"><input type="text" name="msginput" class="msginput" id="msginput" onkeydown="if (event.keyCode == 13) sendmsg()" value="" placeholder="Enter your message here ... (Press enter to send message)" class="form-control wdt-emoji-bundle-enabled"></div>
+
 </div>
 <script type="text/javascript">
 
@@ -164,6 +177,7 @@ function update() {
 	var output = "";
 		xmlhttp.onreadystatechange=function() {
 			if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+
 				emojione.ascii = true;
 				var output = emojione.shortnameToImage(this.responseText);
 				document.getElementById("msg-area").innerHTML =	output;
@@ -199,5 +213,7 @@ function sendmsg() {
 
 setInterval(function(){ update() }, 2500);
 </script>
+
+
 </body>
 </html>

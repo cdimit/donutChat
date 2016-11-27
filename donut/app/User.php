@@ -43,4 +43,14 @@ class User extends Authenticatable
         return Cache::has('user-is-online-' . $this->id);
     }
 
+    public function myLove()
+    {
+      return $this->hasMany('App\Love', 'auth_id');
+    }
+
+    public function hasLove()
+    {
+      return $this->hasMany('App\Love', 'user_id');
+    }
+
 }
