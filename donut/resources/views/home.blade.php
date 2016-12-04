@@ -21,8 +21,8 @@
                         @endforeach
                       @endif
                     </a></h3>
+                    <hr>
                   @endforeach
-                  <br>
 
                   <h1><u>Our Reuse</u></h1>
                     Laravel Framework<br>
@@ -42,6 +42,7 @@
           <div class="panel-heading">Users</div>
           <div class="panel-body">
            <h1><u>Users</u></h1>
+           <p>Online</p>
             @foreach($users as $user)
               @if($user->id!=Auth::user()->id)
                 @if($user->isOnline())
@@ -50,7 +51,7 @@
                     <a href="/create_chat/{{$user->id}}" class="btn btn-primary"><i class="fa fa-comment" aria-hidden="true"></i></a>
                     <a onclick="group({{$user->id}}, '{{$user->name}}');" id="plus{{$user->id}}" class="btn btn-primary"><i style="color:yellow" class="fa fa-comments" aria-hidden="true"></i></a>
                   <a href="/send_follow/{{$user->id}}" class="btn btn-primary"><i class="fa fa-heart" style="color:red" aria-hidden="true"></i></a>
-                  <h3>
+                </h3>
                   @else
                   <h3><span class="label label-success">{{$user->name}} <i class="fa fa-heart" style="color:red" aria-hidden="true"></i></span>
                     <a href="/create_chat/{{$user->id}}" class="btn btn-primary"><i class="fa fa-comment" aria-hidden="true"></i></a>
@@ -61,6 +62,7 @@
                 @endif
               @endif
             @endforeach
+            <p>Offline</p>
             @foreach($users as $user)
                 @if(!$user->isOnline())
                   @if(!Auth::user()->isFollowing($user))

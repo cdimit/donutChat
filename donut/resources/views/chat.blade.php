@@ -2,6 +2,7 @@
 <head>
 	<script src="https://cdn.jsdelivr.net/emojione/2.2.6/lib/js/emojione.min.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/emojione/2.2.6/assets/css/emojione.min.css"/>
+<script src="https://use.fontawesome.com/38043d99c5.js"></script>
 
 
 	<title>Messenger</title>
@@ -147,9 +148,15 @@
 
 <div class="msg-container">
 	<div class="header">
+		<a href="/home" ><i class="fa fa-home" aria-hidden="true"></i></a>
 		         @foreach($chat->part as $p)
 	            @if($p->user->id!=Auth::user()->id)
-	              ({{$p->user->name}})
+	              ({{$p->user->name}}
+								@if($p->user->isOnline())
+									<i class="fa fa-circle" style="color:green" aria-hidden="true"></i>
+									@else
+								@endif
+								)
 	            @endif
 	          @endforeach</div>
 

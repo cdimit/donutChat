@@ -27,4 +27,16 @@ class FollowController extends Controller
         return redirect()->back();
 
     }
+
+    public function welcome()
+    {
+      if(Auth::check()){
+        return redirect('/home');
+
+      }else {
+        return view('welcome');
+
+      }
+
+    }
 }

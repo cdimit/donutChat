@@ -9,7 +9,7 @@
 
                 <div class="panel-body">
                     Welcome to Donut Chat!<br>
-                    Register to start!!!
+                    <a href="/register">Register</a> or <a href="/login">LogIn</a> to start!!!
                 </div>
             </div>
         </div>
