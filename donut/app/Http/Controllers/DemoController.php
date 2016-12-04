@@ -19,12 +19,12 @@ class DemoController extends Controller
     $user_id = $user->id;
 
 foreach ($c->msg as $m) {
+  $name = $m->user->name;
+  $time = $m->user->created_at;
     if($m->user_id==$user_id){
-      $name = $m->user->name;
-      echo "<div class=\"msgc\" style=\"margin-bottom: 30px;\"> <div class=\"msg msgfrom\">$m->message</div> <div class=\"msgarr msgarrfrom\"></div> <div class=\"msgsentby msgsentbyfrom\">Sent by $name </div> </div>";
+      echo "<div class=\"msgc\" style=\"margin-bottom: 30px;\"> <div class=\"msg msgfrom\">$m->message</div> <div class=\"msgarr msgarrfrom\"></div> <div class=\"msgsentby msgsentbyfrom\">Sent by $name $time</div> </div>";
     }else{
-      $name = $m->user->name;
-      echo "<div class=\"msgc\"> <div class=\"msg\"> $m->message </div> <div class=\"msgarr\"></div> <div class=\"msgsentby\">Sent by $name</div> </div>";
+      echo "<div class=\"msgc\"> <div class=\"msg\"> $m->message </div> <div class=\"msgarr\"></div> <div class=\"msgsentby\">Sent by $name $time</div> </div>";
     }
 }
 

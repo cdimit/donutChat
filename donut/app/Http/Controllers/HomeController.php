@@ -27,7 +27,7 @@ class HomeController extends Controller
     public function index()
     {
         $user = Auth::user();
-        $chats = $user->part;
+        $chats = $user->part->sortByDesc('created_at');
         $users = User::all();
 
         return view('home')->with('chats', $chats)->withUsers($users);

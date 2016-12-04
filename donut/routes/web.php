@@ -24,3 +24,7 @@ Route::get('/chat/{chat}', 'DemoController@chat');
 Route::get('/create_group', 'DemoController@createGroup');
 Route::get('/getmessage/{chat}', 'DemoController@getmessage');
 Route::get('/sentmessage/{chat}', 'DemoController@sentmessage');
+
+//Followable
+Route::get('/send_follow/{id}', 'FollowController@sendFollow');
+Route::get('/unfollow/{id}', 'FollowController@unfollow');

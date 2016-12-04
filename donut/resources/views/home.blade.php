@@ -19,7 +19,6 @@
                             ({{$p->user->name}})
                           @endif
                         @endforeach
-                        <span style="color:red">{{$c->chat->name}}</span>
                       @endif
                     </a></h3>
                   @endforeach
@@ -34,6 +33,7 @@
                     <a href="https://erikbelusic.com/tracking-if-a-user-is-online-in-laravel/">Tracking If a User Is Currently Online (Tutorial)</a><br>
                     <a href="http://emojione.com/">EmojiOne</a><br>
                     <a href="http://fontawesome.io/">Font Awesome</a></br>
+                    <a href="https://github.com/skybluesofa/laravel-followers">Laravel Followers</a><br>
                 </div>
             </div>
         </div>
@@ -42,19 +42,40 @@
           <div class="panel-heading">Users</div>
           <div class="panel-body">
            <h1><u>Users</u></h1>
-           <a href="/create_chat/{{Auth::user()->id}}" class="btn btn-success">{{Auth::user()->name}}</a><br><br>
             @foreach($users as $user)
               @if($user->id!=Auth::user()->id)
                 @if($user->isOnline())
-                <a href="/create_chat/{{$user->id}}" class="btn btn-success">{{$user->name}}</a> <a onclick="group({{$user->id}}, '{{$user->name}}');" id="plus{{$user->id}}" class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i></a>
-
-                <br><br>
+                @if(!Auth::user()->isFollowing($user))
+                  <h3><span class="label label-success">{{$user->name}}</span>
+                    <a href="/create_chat/{{$user->id}}" class="btn btn-primary"><i class="fa fa-comment" aria-hidden="true"></i></a>
+                    <a onclick="group({{$user->id}}, '{{$user->name}}');" id="plus{{$user->id}}" class="btn btn-primary"><i style="color:yellow" class="fa fa-comments" aria-hidden="true"></i></a>
+                  <a href="/send_follow/{{$user->id}}" class="btn btn-primary"><i class="fa fa-heart" style="color:red" aria-hidden="true"></i></a>
+                  <h3>
+                  @else
+                  <h3><span class="label label-success">{{$user->name}} <i class="fa fa-heart" style="color:red" aria-hidden="true"></i></span>
+                    <a href="/create_chat/{{$user->id}}" class="btn btn-primary"><i class="fa fa-comment" aria-hidden="true"></i></a>
+                    <a onclick="group({{$user->id}}, '{{$user->name}}');" id="plus{{$user->id}}" class="btn btn-primary"><i style="color:yellow" class="fa fa-comments" aria-hidden="true"></i></a>
+                  <a href="/unfollow/{{$user->id}}" class="btn btn-primary"><i class="fa fa-times" style="color:red" aria-hidden="true"></i></a>
+                  </h3>
+                  @endif
                 @endif
               @endif
             @endforeach
             @foreach($users as $user)
                 @if(!$user->isOnline())
-                <a href="/create_chat/{{$user->id}}" class="btn btn-danger">{{$user->name}}</a> <a onclick="group({{$user->id}}, '{{$user->name}}');" id="plus{{$user->id}}" class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i></a><br><br>
+                  @if(!Auth::user()->isFollowing($user))
+                  <h3><span class="label label-danger">{{$user->name}}</span>
+                    <a href="/create_chat/{{$user->id}}" class="btn btn-primary"><i class="fa fa-comment" aria-hidden="true"></i></a>
+                    <a onclick="group({{$user->id}}, '{{$user->name}}');" id="plus{{$user->id}}" class="btn btn-primary"><i style="color:yellow" class="fa fa-comments" aria-hidden="true"></i></a>
+                  <a href="/send_follow/{{$user->id}}" class="btn btn-primary"><i class="fa fa-heart" style="color:red" aria-hidden="true"></i></a>
+                  <h3
+                  @else
+                  <h3><span class="label label-danger">{{$user->name}} <i class="fa fa-heart" style="color:red" aria-hidden="true"></i></span>
+                    <a href="/create_chat/{{$user->id}}" class="btn btn-primary"><i class="fa fa-comment" aria-hidden="true"></i></a>
+                    <a onclick="group({{$user->id}}, '{{$user->name}}');" id="plus{{$user->id}}" class="btn btn-primary"><i style="color:yellow" class="fa fa-comments" aria-hidden="true"></i></a>
+                  <a href="/unfollow/{{$user->id}}" class="btn btn-primary"><i class="fa fa-times" style="color:red" aria-hidden="true"></i></a>
+                  </h3>
+                  @endif
                 @endif
             @endforeach
             <br>
