@@ -25,15 +25,20 @@
                   @endforeach
 
                   <h1><u>Our Reuse</u></h1>
-                    Laravel Framework<br>
-                    Bootstrap<br>
-                    https://github.com/howCodeORG/Messenger<br>
-                    http://www.youtube.com/howCode<br>
-                    A simple PHP API extension for DateTime. <a href="http://carbon.nesbot.com/">Carbon</a><br>
+                    <a href="https://laravel.com/">Laravel Framework</a><br>
+                    <a href="http://getbootstrap.com/">Bootstrap</a><br>
+                    <a href="https://github.com/howCodeORG/Messenger">Messenger GitHub,</a>
+                    <a href="http://www.youtube.com/howCode">Messenger Tutorial</a><br>
+                    <a href="http://carbon.nesbot.com/">Carbon: A simple PHP API extension for DateTime.</a><br>
                     <a href="https://erikbelusic.com/tracking-if-a-user-is-online-in-laravel/">Tracking If a User Is Currently Online (Tutorial)</a><br>
                     <a href="http://emojione.com/">EmojiOne</a><br>
                     <a href="http://fontawesome.io/">Font Awesome</a></br>
                     <a href="https://github.com/skybluesofa/laravel-followers">Laravel Followers</a><br>
+
+                  <h1><u>Future Reuse</u></h1>
+                    <a href="https://github.com/laravel/socialite">Laravel Socialite</a><br>
+                    <a href="https://github.com/Bogardo/Mailgun">Mailgun API</a><br>
+                    <a href="https://github.com/OneSignal/emoji-picker">Emoji Picker</a><br>
                 </div>
             </div>
         </div>
