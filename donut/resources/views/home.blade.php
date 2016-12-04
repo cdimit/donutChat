@@ -39,6 +39,7 @@
                     <a href="https://github.com/laravel/socialite">Laravel Socialite</a><br>
                     <a href="https://github.com/Bogardo/Mailgun">Mailgun API</a><br>
                     <a href="https://github.com/OneSignal/emoji-picker">Emoji Picker</a><br>
+                    <a href="https://github.com/thedevdojo/laravel-user-image">Laravel User Image</a><br>
                 </div>
             </div>
         </div>
